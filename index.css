@@ -1,0 +1,84 @@
+p {
+  color: rgb(255, 255, 255);
+  font-family: Inter, sans-serif;
+  font-size: 0.94rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  letter-spacing: 0%;
+  text-align: left;
+  margin: 0;
+}
+
+.circular-progress {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: conic-gradient(
+    rgba(127, 58, 68, 0.5) var(--progress),
+    rgba(127, 58, 68, 0.5) 0deg
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circular-progress::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 54px;
+  height: 54px;
+  background: rgba(53, 121, 245, 1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+.progress-text {
+  font: Inter;
+}
+
+.container {
+  width: 743px;
+  height: 91px;
+  background-color: rgba(53, 121, 245, 1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.details {
+  width: 389px;
+  height: 64px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.checklist {
+  width: 76px;
+  height: 18px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.13rem;
+  border-radius: 40px;
+  background: rgb(35, 100, 219);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 170px;
+  height: 40px;
+  border-radius: 6px;
+  border: none;
+  background: rgb(244, 248, 255);
+  color: rgb(71, 119, 237);
+  font-size: 14px;
+  line-height: 20px;
+  cursor: pointer;
+}

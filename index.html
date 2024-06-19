@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div class="container">
+      <svg
+        width="90"
+        height="90"
+        viewBox="-22.5 -22.5 225 225"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        style="transform: rotate(-90deg)"
+      >
+        <circle
+          r="80"
+          cx="90"
+          cy="90"
+          fill="transparent"
+          stroke="#e0e0e0"
+          stroke-width="5"
+          stroke-dasharray="502.40000000000003px"
+          stroke-dashoffset="0"
+        ></circle>
+        <circle
+          id="progress-circle"
+          r="80"
+          cx="90"
+          cy="90"
+          stroke="white"
+          stroke-width="7"
+          stroke-linecap="round"
+          stroke-dashoffset="480px"
+          fill="transparent"
+          stroke-dasharray="502.40000000000003px"
+        ></circle>
+        <text
+          class="progress-text"
+          id="progress-text"
+          x="78px"
+          y="98px"
+          fill="white"
+          font-size="50px"
+          font-family="Inter"
+          font-size="1.25rem"
+          font-weight="400"
+          style="transform: rotate(90deg) translate(-20px, -170px)"
+        >
+          0/7
+        </text>
+      </svg>
+
+      <div class="details">
+        <p class="checklist">Чеклист</p>
+        <p id="action-status">Выполнено: 0 из 7 действий</p>
+        <p style="font-size: 0.75rem; font-weight: 400; line-height: 1.13rem">
+          Следующее действие: Созвониться с клиентом до 23.05.24 12:00
+        </p>
+      </div>
+      <button class="button">Открыть чеклист</button>
+
+      <script>
+        function changeProcess() {
+          const totalSteps = 7;
+          const progress = 1;
+          const circle = document.getElementById("progress-circle");
+          const text = document.getElementById("progress-text");
+          const actionStatusElement = document.getElementById("action-status");
+          const offset = 502.4 - (502.4 * progress) / totalSteps;
+
+          circle.style.strokeDashoffset = offset;
+          text.textContent = `${progress}/${totalSteps}`;
+          actionStatusElement.innerText = `Выполнено: ${progress} из ${totalSteps}`;
+        }
+        window.onload = changeProcess;
+      </script>
+    </div>
+  </body>
+</html>
